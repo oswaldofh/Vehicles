@@ -71,13 +71,16 @@ namespace Vehicles.API.Data
 
         private async Task CheckProceduresAsync()
         {
-            _context.Procedures.Add(new Procedure {Price = 10000, Description = "Cambio Aceite" });
-            _context.Procedures.Add(new Procedure { Price = 10000, Description = "Alineacion" });
-            _context.Procedures.Add(new Procedure { Price = 10000, Description = "Cambio Caja" });
-            _context.Procedures.Add(new Procedure { Price = 10000, Description = "Filtro de aire" });
-            _context.Procedures.Add(new Procedure { Price = 10000, Description = "Guayas" });
-            _context.Procedures.Add(new Procedure { Price = 10000, Description = "Cambio llanta delantera" });
-            await _context.SaveChangesAsync();
+            if (!_context.Procedures.Any())
+            {
+                _context.Procedures.Add(new Procedure { Price = 10000, Description = "Cambio Aceite" });
+                _context.Procedures.Add(new Procedure { Price = 10000, Description = "Alineacion" });
+                _context.Procedures.Add(new Procedure { Price = 10000, Description = "Cambio Caja" });
+                _context.Procedures.Add(new Procedure { Price = 10000, Description = "Filtro de aire" });
+                _context.Procedures.Add(new Procedure { Price = 10000, Description = "Guayas" });
+                _context.Procedures.Add(new Procedure { Price = 10000, Description = "Cambio llanta delantera" });
+                await _context.SaveChangesAsync();
+            }
         }
 
         private async Task CheckDocumentTypesAsync()

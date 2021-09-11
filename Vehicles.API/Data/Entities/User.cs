@@ -34,11 +34,11 @@ namespace Vehicles.API.Data.Entities
         [Display(Name = "Foto")]
         public Guid ImageId { get; set; }
 
-        //TODO: Fix the images path
+        
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
             ? $"https://localhost:44337//images/noimage.png"
-            : $"https://vehiclessalazar.blob.core.windows.net/users/{ImageId}";
+            : $"https://vehiclesfuentes.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Tipo de usuario")]
         public UserType UserType { get; set; }
@@ -47,6 +47,10 @@ namespace Vehicles.API.Data.Entities
         public string FullName => $"{FirstName } {LastName }";
 
         public ICollection<Vehicle> Vehicles { get; set; }
-       
+
+
+        [Display(Name = "# Vehiculos")]
+        public int VehiclesCount => Vehicles == null ? 0 : Vehicles.Count;
+
     }
 }
