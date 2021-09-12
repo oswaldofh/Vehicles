@@ -30,6 +30,7 @@ namespace Vehicles.API.Data
             await CheckUserAsycn("1010", "Pedro", "PicaPiedra", "pedro@yopmail.com", "312 234 3456", "cll 34 # 50-34", UserType.User);
             await CheckUserAsycn("2020", "Juan", "Valdez", "juan@yopmail.com", "312 234 3456", "cll 34 # 50-34", UserType.Admin);
             await CheckUserAsycn("3030", "Raul", "Santy", "raul@yopmail.com", "312 234 3456", "cll 34 # 50-34", UserType.User);
+            await CheckUserAsycn("2020", "Juliana", "Franco", "Juliana@yopmail.com", "312 234 3456", "cll 34 # 50-34", UserType.Admin);
 
 
         }
